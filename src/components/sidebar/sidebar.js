@@ -91,7 +91,7 @@ const Sidebar = () => {
   src="https://raw.githubusercontent.com/Sridhar-C-25/sidebar_reactTailwind/main/src/assets/control.png"
   className={`absolute cursor-pointer -right-3 top-9 w-7 border-dark-purple
    border-2 rounded-full  ${!open && "rotate-180"}`}
-  onClick={() => setOpen(!open)} alt="logo"
+  onClick={() => setOpen(!open)} alt="logo" 
 />
 <div className="flex gap-x-4 items-center">
       <img
@@ -102,7 +102,7 @@ const Sidebar = () => {
         onClick={() => window.location.replace(
           "https://recovery-advisers.net"
         )}
-        style={{ width: "50%" }} alt="logo"
+        alt="logo"
       />
       
       

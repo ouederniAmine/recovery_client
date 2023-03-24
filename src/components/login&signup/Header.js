@@ -1,5 +1,5 @@
 //  <Header/> component that render on both the login and signup pages for quick information and navigation
-import logo from "../../assets/logo white.jpg"
+import logo from "../../assets/logoMain.png"
 
 export default function Header({
     heading,
@@ -12,7 +12,7 @@ export default function Header({
             <div className="flex justify-center">
                 <img 
                     alt=""
-                    style={{width: "17rem", height: "17em"}}
+        
                     className="rounded-full"
                     onClick={() => window.location.replace(
                         "https://recovery-advisers.net"

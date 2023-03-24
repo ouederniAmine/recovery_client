@@ -4,12 +4,10 @@ import Navbar from "../../components/navbar/navbar";
 import axios from "axios";
 import { useNavigate } from "react-router";
 import { useState } from "react";
-import BankLogo from "../../assets/bank.svg";
-import CurrencyInput from 'react-currency-input-field';
+
 
 const NewAdmin = ({ inputs, title }) => {
   // get data from variable api endpoint
-  const [btc, setBtc] = useState(false);
   const navigate = useNavigate();
   const [data, setData] = useState({
     password:"", email:""
