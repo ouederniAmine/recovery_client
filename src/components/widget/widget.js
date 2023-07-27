@@ -5,9 +5,11 @@ import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlin
 import axios from "axios";
 import { useEffect, useState } from "react";
 import authService from "../../services/auth.service";
+import { useTranslation } from 'react-i18next';
 
 const Widget = ({ type }) => {
   let data = {} ;
+  const { t, i18n } = useTranslation();
 
   
   
@@ -30,7 +32,8 @@ const Widget = ({ type }) => {
   switch (type) {
     case "CurrentBalanace":
       data = {
-        title: "Current Balanace",
+        title:
+        t('Current Balanace'),
         isMoney: false,
         
         icon: (
@@ -46,7 +49,7 @@ const Widget = ({ type }) => {
       break;
     case "FundsonHold":
       data = {
-        title: "Funds on Hold",
+        title: t("Funds on Holds"),
         isMoney: false,
         link: "View all invoices",
         icon: (
@@ -62,7 +65,7 @@ const Widget = ({ type }) => {
       break;
     case "Withdraw":
       data = {
-        title: "Withdrawable funds",
+        title: t("Withdrawable Balance"),
         isMoney: true,
         link: "View net earnings",
         icon: (

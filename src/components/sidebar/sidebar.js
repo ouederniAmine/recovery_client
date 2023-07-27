@@ -269,7 +269,7 @@ const Sidebar = () => {
         >
           <LocalPhoneIcon/>
           <span   className={`${!open && "hidden"} text-white origin-left duration-200`}>
-            {t('Request a callback')}
+            {t('Request a Callback')}
           </span>
         </li> 
         <li 
