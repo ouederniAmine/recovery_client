@@ -4,10 +4,12 @@ import { Link } from "react-router-dom";
 import React from "react";
 import { useState  , useEffect} from "react";
 import axios from "axios";
+import { useTranslation } from 'react-i18next';
 const ClientsTable = (props) => {
   const [data, setData] = useState([]);
   
 
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
       axios
@@ -55,34 +57,34 @@ const ClientsTable = (props) => {
     
     {
       field: "fullname",
-      headerName: "Client Name",
+      headerName:   t('Client Name')      ,
       width: 230,
     },
   
     {
       field: "email",
-      headerName: "Client Email",
+      headerName: t("Client Email"),
       width: 200,
     },
     {
       field: "current_balance",
-      headerName: "Current Balance",
+      headerName: t("Current Balance"),
       width: 200,
     },
     {
       field: "funds_on_hold",
-      headerName: "Funds On Hold",
+      headerName: t("Funds On Hold"),
       width: 200,
     },
     {
       field: "withdrawable_balance",
-      headerName: "Withdrawable Balance",
+      headerName: t("Withdrawable Balance"),
       width: 200,
     }
     ,
     {
       field: "last_login_info",
-      headerName: "Last Login Info",
+      headerName: t("Last Login Info"),
       width: 200,
     }
    
@@ -106,22 +108,22 @@ const ClientsTable = (props) => {
   const actionColumn = [
     {
       field: "action",
-      headerName: "Action",
+      headerName: t("Action"),
       width: 200,
       renderCell: (params) => {
         return (
           <div className="cellAction">
             <Link to={"/app/clients/"+params.row.id }style={{ textDecoration: "none" }}>
-              <div className="viewButton">View</div>
+              <div className="viewButton">{t("View")}</div>
             </Link>
             <Link to={"/app/clients/edit/"+params.row.id }style={{ textDecoration: "none" }}>
-              <div className="viewButton">Edit</div>
+              <div className="viewButton">{t('Edit')}</div>
             </Link>
             <div
               className="deleteButton"
               onClick={() => handleDelete(params.row.id)}
             >
-              Delete
+              {t("Delete")}
             </div>
           </div>
         );
@@ -131,14 +133,14 @@ const ClientsTable = (props) => {
   return (
     <div className="datatable">
  <div className="datatableTitle">
-         Clients
+         {t('Clients')}
          <div>
          <Link to={ "new"} className="link">
-          Add New User
+          {t('Add New User')}
         </Link>
 
         <Link to={ "csv"} className="link">
-          Import CSV
+          {t('Import CSV')}
         </Link></div>
       </div>
        

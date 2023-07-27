@@ -3,8 +3,12 @@ import Sidebar from "../../components/sidebar/sidebar";
 import Navbar from "../../components/navbar/navbar";
 import { useState ,  useEffect} from "react";
 import axios from "axios";
+import { useTranslation } from 'react-i18next';
+
 import { useNavigate } from "react-router";
 const Single = () => {
+  const { t, i18n } = useTranslation();
+
   const [data, setData] = useState({
     id:0,
     email:"", 
@@ -59,76 +63,76 @@ const Single = () => {
                                     d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                             </svg>
                         </span>
-                        <span class="tracking-wide">File Information</span>
+                        <span class="tracking-wide">{t("File Information")}</span>
                     </div>
                     <div class="text-gray-700">
                         <div class="grid md:grid-cols-2 text-sm">
                             <div class="grid grid-cols-2">
-                                <div class="px-4 py-2 font-semibold">Account Number</div>
+                                <div class="px-4 py-2 font-semibold">{t("Account Number")}</div>
                                 <div class="px-4 py-2">{data.account_number}</div>
                             </div>
                             <div class="grid grid-cols-2">
-                                <div class="px-4 py-2 font-semibold">Full Name</div>
+                                <div class="px-4 py-2 font-semibold">{t("Full Name")}</div>
                                 <div class="px-4 py-2">{data.fullname}</div>
                             </div>
                             <div class="grid grid-cols-2">
-                                <div class="px-4 py-2 font-semibold">Contact Info</div>
+                                <div class="px-4 py-2 font-semibold">{t("Contact Info")}</div>
                                 <div class="px-4 py-2">{data.contact_information}</div>
                             </div>
                             <div class="grid grid-cols-2">
-                                <div class="px-4 py-2 font-semibold">Company Name</div>
+                                <div class="px-4 py-2 font-semibold">{t("Company Name")}</div>
                                 <div class="px-4 py-2">{data.company_name}</div>
                             </div>
                             <div class="grid grid-cols-2">
-                                <div class="px-4 py-2 font-semibold">Account Number</div>
+                                <div class="px-4 py-2 font-semibold">{t("Account Number")}</div>
                                 <div class="px-4 py-2">{data.account_number}</div>
                             </div>
                             <div class="grid grid-cols-2">
-                                <div class="px-4 py-2 font-semibold"> Country</div>
+                                <div class="px-4 py-2 font-semibold">{t("Country")} </div>
                                 <div class="px-4 py-2">{data.country}</div>
                             </div>
                             <div class="grid grid-cols-2">
-                                <div class="px-4 py-2 font-semibold"> Bank Name </div>
+                                <div class="px-4 py-2 font-semibold">{t("Bank Name")}  </div>
                                 <div class="px-4 py-2">{data.bank_name}</div>
                             </div>
                             <div class="grid grid-cols-2">
-                                <div class="px-4 py-2 font-semibold"> Swift</div>
+                                <div class="px-4 py-2 font-semibold">{t("Swift")} </div>
                                 <div class="px-4 py-2">{data.swift}</div>
                             </div>
                             <div class="grid grid-cols-2">
-                                <div class="px-4 py-2 font-semibold"> IBAN</div>
+                                <div class="px-4 py-2 font-semibold">{t("IBAN")} </div>
                                 <div class="px-4 py-2">{data.country}</div>
                             </div>
                             <div class="grid grid-cols-2">
-                                <div class="px-4 py-2 font-semibold"> Beneficiary Name</div>
+                                <div class="px-4 py-2 font-semibold">{t("Beneficiary Name")} </div>
                                 <div class="px-4 py-2">{data.beneficiary_name}</div>
                             </div>
                             <div class="grid grid-cols-2">
-                                <div class="px-4 py-2 font-semibold"> Beneficiary Address</div>
+                                <div class="px-4 py-2 font-semibold">{t("Beneficiary Address")} </div>
                                 <div class="px-4 py-2">{data.beneficiary_address}</div>
                             </div>
                             <div class="grid grid-cols-2">
-                                <div class="px-4 py-2 font-semibold"> Bank Address</div>
+                                <div class="px-4 py-2 font-semibold">{t("Bank Address")} </div>
                                 <div class="px-4 py-2">{data.beneficiary_name}</div>
                             </div>
                             <div class="grid grid-cols-2">
-                                <div class="px-4 py-2 font-semibold"> Bitcoin Wallet</div>
+                                <div class="px-4 py-2 font-semibold">{t("Bitcoin Wallet")} </div>
                                 <div class="px-4 py-2">{data.btc_wallet}</div>
                             </div>
                             <div class="grid grid-cols-2">
-                                <div class="px-4 py-2 font-semibold">Current Balance</div>
+                                <div class="px-4 py-2 font-semibold">{t("Current Balance")}</div>
                                 <div class="px-4 py-2">{data.current_balance}</div>
                             </div>
                             <div class="grid grid-cols-2">
-                                <div class="px-4 py-2 font-semibold"> Funds On Hold</div>
+                                <div class="px-4 py-2 font-semibold"> {t("Funds On Hold")}</div>
                                 <div class="px-4 py-2">{data.fund_on_hold}</div>
                             </div>
                             <div class="grid grid-cols-2">
-                                <div class="px-4 py-2 font-semibold"> Withdrawable Balance</div>
+                                <div class="px-4 py-2 font-semibold"> {t("Withdrawable Balance")}</div>
                                 <div class="px-4 py-2">{data.withdrawable_balance}</div>
                             </div>
                             <div class="grid grid-cols-2">
-                                <div class="px-4 py-2 font-semibold"> Last Login Info</div>
+                                <div class="px-4 py-2 font-semibold">{t("Last Login Info")} </div>
                                 <div class="px-4 py-2">{data.last_login_info}</div>
                             </div>
                             
@@ -142,7 +146,7 @@ const Single = () => {
                   e.preventDefault();
                   deleteUser();
 
-                }} type="button" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Delete User</button>
+                }} type="button" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">{t("Delete User")}</button>
 
           </div>
           

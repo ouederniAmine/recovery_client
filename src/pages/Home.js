@@ -9,8 +9,11 @@ import axios from 'axios';
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import authService from '../services/auth.service';
+import { useTranslation } from 'react-i18next';
+
 const Home = (props) => {
-    
+    const { t, i18n } = useTranslation();
+
      useEffect(() => {
         const geolocationAPI = navigator.geolocation;
         const getUserCoordinates = () => {
@@ -67,32 +70,29 @@ const Home = (props) => {
                                     d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                             </svg>
                         </span>
-                        <span class="tracking-wide">File Information</span>
+                        <span class="tracking-wide">{t("File Information")}</span>
                     </div>
                     <div class="text-gray-700">
                         <div class="grid md:grid-cols-2 text-sm">
                             <div class="grid grid-cols-2">
-                                <div class="px-4 py-2 font-semibold">Account Number</div>
+                                <div class="px-4 py-2 font-semibold">{t("Account Number")}</div>
                                 <div class="px-4 py-2">{props.data.account_number}</div>
                             </div>
                             <div class="grid grid-cols-2">
-                                <div class="px-4 py-2 font-semibold">Full Name</div>
+                                <div class="px-4 py-2 font-semibold">{t("Full Name")}</div>
                                 <div class="px-4 py-2">{props.data.fullname}</div>
                             </div>
                             <div class="grid grid-cols-2">
-                                <div class="px-4 py-2 font-semibold">Contact Info</div>
+                                <div class="px-4 py-2 font-semibold">{t("Contact Info")}</div>
                                 <div class="px-4 py-2">{props.data.contact_information}</div>
                             </div>
                             <div class="grid grid-cols-2">
-                                <div class="px-4 py-2 font-semibold">Company Name</div>
+                                <div class="px-4 py-2 font-semibold">{t("Company Name")}</div>
                                 <div class="px-4 py-2">{props.data.company_name}</div>
                             </div>
+                          
                             <div class="grid grid-cols-2">
-                                <div class="px-4 py-2 font-semibold">Account Number</div>
-                                <div class="px-4 py-2">{props.data.account_number}</div>
-                            </div>
-                            <div class="grid grid-cols-2">
-                                <div class="px-4 py-2 font-semibold">Permanant Address</div>
+                                <div class="px-4 py-2 font-semibold">{t("Permanant Address")}</div>
                                 <div class="px-4 py-2">{props.data.bank_address}</div>
                             </div>
                             
@@ -107,7 +107,7 @@ const Home = (props) => {
 
                 
                 <div className='listContainer'>
-                    <div className='listTitle'>Latest Clients</div>
+                    <div className='listTitle'>{t("Latest Clients")}</div>
                     <Invoicetable></Invoicetable>
                 </div>
                 </div></>)

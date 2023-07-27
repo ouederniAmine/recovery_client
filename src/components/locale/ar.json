@@ -1,0 +1,71 @@
+{
+
+"sidebar.dashboard": "لوحة التحكم",
+"sidebar.clients": "العملاء",
+"sidebar.addAdmin": "إضافة المشرف",
+"sidebar.signOut": "خروج",
+
+"Edit Info" : "تعديل المعلومات",
+"Request a Callback" : "طلب مكالمة",
+"Request a withdrawal" : "طلب سحب",
+"Your withdrawal request is now under review. You will contacted for a vocal confirmation shortly.": "تمت مراجعة طلب السحب الخاص بك الآن. سيتم الاتصال بك للتأكيد الصوتي قريبًا."
+,"Close modal": "إغلاق النافذة"
+
+,"Request Successfully Submitted"   : "تم إرسال الطلب بنجاح",
+"I accept"  : "أوافق"
+,"Your request has been successfully submitted. A representative will call you as soon as possible."    : "تم إرسال طلبك بنجاح. سيتصل بك ممثل في أقرب وقت ممكن."
+,"Client Name": "اسم العميل",
+"Client Email": "بريد العميل"
+,"Current Balance" : "الرصيد الحالي"
+,"Funds On Hold" : "الأموال معلقة"
+,"Withdrawable Balance" : "الرصيد القابل للسحب"
+
+,"Last Login Info"  : "معلومات تسجيل الدخول الأخيرة"
+,
+"View"  : "عرض",
+
+"Edit"  : "تعديل",
+
+
+"Delete"    : "حذف",
+
+"Clients"   : "العملاء"
+,
+"Add New User"  : "إضافة مستخدم جديد",
+"Import CSV"    : "استيراد CSV",
+"Action"    : "عمل",
+"Add New Admin:"    : "إضافة مشرف جديد:",
+"Email" : "البريد الإلكتروني",
+"Admin  Password"  : "كلمة مرور المشرف",
+"Add Admin" : "إضافة مشرف",
+"File Information"  : "معلومات الملف",
+"Account Number"    : "رقم الحساب",
+"Full Name" : "الاسم الكامل",
+"Contact Info"  : "معلومات الاتصال",
+"Company Name"      : "اسم الشركة",
+"Permanant Address" : "العنوان الدائم",
+"Latest Clients"    : "أحدث العملاء"
+,"Country"  : "بلد"
+
+,"Bank Name"    : "اسم البنك",
+"Swift" : "Swift",
+"IBAN"  : "IBAN",
+"Beneficiary Name"  : "اسم المستفيد"
+,"Beneficiary Address"  : "عنوان المستفيد"
+,"Bank Address" : "عنوان البنك"
+
+,"Bitcoin Wallet"   : "محفظة بيتكوين"
+
+,"Delete User"  : "حذف المستخدم"
+
+
+
+
+
+
+
+
+
+
+
+}
