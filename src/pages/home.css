@@ -15,7 +15,6 @@
 .home .homeContainer .listContainer {
     -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
     box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
-    padding: 20px;
     margin: 20px;
 }
 .home .homeContainer .listContainer .listTitle {
@@ -23,3 +22,65 @@
     color: gray;
     margin-bottom: 15px;
 }
+.dashboard {
+    display: flex;
+    width: 100%;
+    padding: 20Px;
+}
+
+.section {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+}
+
+#section1 {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    align-items: center;
+    justify-content: center;
+}
+#section2{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.line {
+    border-bottom: 3px solid rgb(104, 104, 104);
+    margin-top: 5px;
+    width: 100%;
+}
+.vl {
+    border-left: 3px solid rgb(211, 211, 211);
+    height: 100%;
+
+  }
+  #offical{
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+  #personal{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+
+  .center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .centerc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+   .padding{
+    padding: 20px;}
