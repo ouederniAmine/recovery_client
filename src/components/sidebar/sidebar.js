@@ -8,6 +8,7 @@ import { useState ,useEffect } from "react";
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import LogoutIcon from '@mui/icons-material/Logout';
+import ArticleIcon from '@mui/icons-material/Article';
 import { useTranslation } from 'react-i18next';
 
 const Sidebar = () => {
@@ -16,6 +17,7 @@ const Sidebar = () => {
     const $targetEl = document.getElementById('small-modal');
     const modal = new Modal($targetEl);
     const [admin, setAdmin] = useState(false);
+    const [auto_trader, setAutoTrader] = useState(true);
     const[loading,setLoading]=useState(true);
     //useEffect to check if user is admin
     useEffect(() => {
@@ -52,6 +54,15 @@ const Sidebar = () => {
     const checkAdmin = async () => {
         const response = await fetch(`/backend/api/checkadmin/${authService.getCurrentUser().userid}`);
         const data = await response.json();
+        // check if user is auto trader
+        const response2 = await fetch(`/backend/api/auto_trader/${authService.getCurrentUser().userid}`);
+        const data2 = await response2.json();
+        if (data2.auto_trader) {
+          console.log(data2.auto_trader);
+            setAutoTrader(true);
+        }else{
+            setAutoTrader(false);
+        }
         console.log(data);
         if (data.isAdmin) {
             setAdmin(true);
@@ -155,7 +166,20 @@ const Sidebar = () => {
             {t('sidebar.addAdmin')}
           </span>
         </li>
-   
+        <li 
+          key={7}
+          className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 
+         my-8"
+            "bg-light-white"
+           `}
+           style={{alignSelf:"baseline"}}
+           onClick={signOutUser} 
+        >
+              <ArticleIcon/>
+          <span className={`${!open && "hidden"} text-white origin-left duration-200`}>
+          {t('Login Log')}
+          </span>
+        </li> 
       <li 
         key={4}
         className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 
@@ -301,7 +325,28 @@ const Sidebar = () => {
           {t('sidebar.signOut')}
           </span>
         </li> 
-      
+       
+
+        <li 
+          key={5}
+          className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 
+         my-8"
+            "bg-light-white"
+           `}
+           style={{alignSelf:"baseline"}}
+
+        >
+             <div class="control">
+    <label class="toggle">
+        <span  className={`${!open && "hidden"} text-white origin-left duration-200`}>Auto Trader:</span>
+        <input class="toggle__control" type="checkbox"  checked={auto_trader} />
+
+          <div class="toggle__slider">
+            <div class="toggle__handle"></div>
+        </div>
+    </label>
+</div>
+        </li> 
     </ul></>)}
    </>):(<></>)}
   </div>

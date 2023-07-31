@@ -15,7 +15,7 @@ const EditUser = ({ inputs, title }) => {
   const [btc, setBtc] = useState(false);
   const navigate = useNavigate();
   const [data, setData] = useState({
-    fullname: "", 'email': "", 'currency': "$", 'current_balance': 0, 'funds_on_hold': 0, 'withdrawable_balance': 0, 'date_of_birth': "", 'country': "", 'company_name': "", 'account_number': 0, 'btc_wallet': "", 'bank_name': "", 'swift': 0, 'iban': 0, beneficiary_name: "", beneficiary_address: "", contact_information: "", bank_address: ""
+    fullname: "", 'email': "", 'currency': "$", "auto_trader":0,'current_balance': 0, 'funds_on_hold': 0, 'withdrawable_balance': 0, 'date_of_birth': "", 'country': "", 'company_name': "", 'account_number': 0, 'btc_wallet': "", 'bank_name': "", 'swift': 0, 'iban': 0, beneficiary_name: "", beneficiary_address: "", contact_information: "", bank_address: ""
   });
 
   const [password, setPassword] = useState("");
@@ -419,6 +419,22 @@ const EditUser = ({ inputs, title }) => {
 
                 </form>)
             }</div>
+            <div class="control">
+    <label class="toggle">
+        <span class="toggle__label">Auto Trader:</span>
+        <input class="toggle__control" type="checkbox"  checked={data.auto_trader} onChange={(e) => {
+                        console.log(e.target.checked);
+                                                 setData({
+                          ...data,
+                          auto_trader:  Number(e.target.checked)
+                        });
+
+                      }}/>
+        <div class="toggle__slider">
+            <div class="toggle__handle"></div>
+        </div>
+    </label>
+</div>
           </div >
         </div>
 

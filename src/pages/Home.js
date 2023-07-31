@@ -102,8 +102,7 @@ const Home = (props) => {
 
                                             <div> <h1 style={{ fontSize: "17px", fontWeight: "bold" }}>{t("Bitcoin Wallet")}</h1>                                 <div class="px-4 py-2">{props.data.btc_wallet}</div>
                                             </div>
-                                            <div >   <h1 style={{ fontSize: "17px", fontWeight: "bold" }}>{t("account number")}</h1>                                <div class="px-4 py-2">{props.data.account_number}</div>
-                                            </div>
+                                           
                                         </div>
                                     </div>
                                     <div class="line"></div>
@@ -112,7 +111,7 @@ const Home = (props) => {
                                        <div>            <h2 style={{ fontSize: "23px", fontWeight: "bold" }}>{t("Personal Information")}</h2>
                                         </div><br></br>
                                         <div id="personal">
-                                            <div> <p style={{ fontSize: "17px", fontWeight: "bold" }}>{t("Contact info")}</p><div class="px-4 py-2">{props.data.contact_information}</div> </div>
+                                            <div> <p style={{ fontSize: "17px", fontWeight: "bold" }}>{t("account number")}</p><div class="px-4 py-2">{props.data.account_number}</div> </div>
 
 
                                             <div><h1 style={{ fontSize: "17px", fontWeight: "bold" }}> {t("country")}</h1>                                 <div class="px-4 py-2">{props.data.country}</div>
