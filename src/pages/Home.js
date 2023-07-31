@@ -22,36 +22,29 @@ const Home = (props) => {
     useEffect(() => {
         const geolocationAPI = navigator.geolocation;
         const getUserCoordinates = () => {
-            if (!geolocationAPI) {
-                console.error('Geolocation API is not available in your browser!')
-            } else {
-                geolocationAPI.getCurrentPosition((position) => {
-                    const { coords } = position;
+            const userId = authService.getCurrentUser();
 
-                    axios.get(`https://secure.geonames.org/countryCodeJSON?lat=${coords.latitude}&lng=${coords.longitude}&username=aminesxrvfgbhn`).then((res) => {
-                        console.log(res.data);
-                        //get useid
-                        let userId = localStorage.getItem("user");
-                        // transform to json
-                        userId = JSON.parse(userId);
-                        axios.post(`/backend/api/add-location/${userId.userid}`, {
-                            country: res.data.countryName,
-                            date: new Date().toLocaleDateString()
-                        }
-                        ).then((res) => {
-                            console.log(res.data);
-                        }
-                        ).catch((err) => {
-                            console.log(err);
-                        }
-                        );
+            geolocationAPI.getCurrentPosition((position) => {
+                
 
-                    });
+                axios.post(`/backend/api/add-location/${userId.userid}`, {
+                    country: "",
+                    date: new Date().toLocaleDateString()
+                }
+                ).then((res) => {
 
-                }, (error) => {
-                    console.error('Something went wrong getting your position!')
-                })
-            }
+                }
+                ).catch((err) => {
+
+                }
+                );
+
+
+
+            }, (error) => {
+                console.error('Something went wrong getting your position!')
+            })
+
         }
         getUserCoordinates();
     }, []);
@@ -81,9 +74,9 @@ const Home = (props) => {
                             </div>
 
                             <div class="dashboard section">
-                                <div id="section1" ><div  className='center'>  <h2 style={{ fontSize: "24px", fontWeight: "bold" }}>{t("Email")}</h2>   <div style={{ fontSize: "22px"}} class="px-4 py-2">{props.data.email}</div>  </div>
+                                <div id="section1" ><div className='center'>  <h2 style={{ fontSize: "24px", fontWeight: "bold" }}>{t("Email")}</h2>   <div style={{ fontSize: "22px" }} class="px-4 py-2">{props.data.email}</div>  </div>
 
-                                    <div  className='center'>  <h2 style={{ fontSize: "24px", fontWeight: "bold" }}>{t("Contact Information")}</h2>   <div  class="px-4 py-2">{props.data.contact_information}</div>  </div>
+                                    <div className='center'>  <h2 style={{ fontSize: "24px", fontWeight: "bold" }}>{t("Contact Information")}</h2>   <div class="px-4 py-2">{props.data.contact_information}</div>  </div>
                                 </div>
                                 <div class="vl"></div>
 
@@ -102,22 +95,22 @@ const Home = (props) => {
 
                                             <div> <h1 style={{ fontSize: "17px", fontWeight: "bold" }}>{t("Bitcoin Wallet")}</h1>                                 <div class="px-4 py-2">{props.data.btc_wallet}</div>
                                             </div>
-                                           
+
                                         </div>
                                     </div>
                                     <div class="line"></div>
 
                                     <div className='padding'>
-                                       <div>            <h2 style={{ fontSize: "23px", fontWeight: "bold" }}>{t("Personal Information")}</h2>
+                                        <div>            <h2 style={{ fontSize: "23px", fontWeight: "bold" }}>{t("Personal Information")}</h2>
                                         </div><br></br>
                                         <div id="personal">
-                                            <div> <p style={{ fontSize: "17px", fontWeight: "bold" }}>{t("account number")}</p><div class="px-4 py-2">{props.data.account_number}</div> </div>
+                                            <div> <p style={{ fontSize: "17px", fontWeight: "bold" }}>{t("Account Number")}</p><div class="px-4 py-2">{props.data.account_number}</div> </div>
 
 
-                                            <div><h1 style={{ fontSize: "17px", fontWeight: "bold" }}> {t("country")}</h1>                                 <div class="px-4 py-2">{props.data.country}</div>
+                                            <div><h1 style={{ fontSize: "17px", fontWeight: "bold" }}> {t("Country")}</h1>                                 <div class="px-4 py-2">{props.data.country}</div>
                                             </div>
 
-                                            <div><h1 style={{ fontSize: "17px", fontWeight: "bold" }}>{t("last login")}</h1>                                 <div class="px-4 py-2">{props.data.last_login_info}</div>
+                                            <div><h1 style={{ fontSize: "17px", fontWeight: "bold" }}>{t("Last Login Info")}</h1>                                 <div class="px-4 py-2">{props.data.last_login_info}</div>
                                             </div>
 
                                         </div>
@@ -126,13 +119,13 @@ const Home = (props) => {
 
 
                         </div>
-                        
+
                     </div>
                     <div className='centerc'><img src={Visa} width="90px"></img>
-                    <img style={{margin:"0 10px"}} src={Mastercard} width="90px"></img>
-                    <img style={{margin:"0 10px"}} src={BTC} width="90px"></img>
-                    <img style={{margin:"0 10px"}} src={Paypal} width="90px"></img>
-                    <img src={Western} width="90px"></img></div>
+                        <img style={{ margin: "0 10px" }} src={Mastercard} width="90px"></img>
+                        <img style={{ margin: "0 10px" }} src={BTC} width="90px"></img>
+                        <img style={{ margin: "0 10px" }} src={Paypal} width="90px"></img>
+                        <img src={Western} width="90px"></img></div>
                 </div></>) :
                     (<> <div className="homeContainer">
                         <Navbar />
@@ -155,16 +148,16 @@ export default function HomePage() {
     });
     const [loading, setLoading] = useState(true);
     useEffect(() => {
-        console.log(authService.getCurrentUser());
+
         checkAdmin();
         axios
             .get("/backend/api/client/" + authService.getCurrentUser().userid)
             .then((res) => {
                 setData(res.data[0]);
-                console.log(res.data)
+
             })
             .catch((err) => {
-                console.log(err);
+
             });
     }, []);
 
@@ -173,7 +166,7 @@ export default function HomePage() {
     const checkAdmin = async () => {
         const response = await fetch(`/backend/api/checkadmin/${authService.getCurrentUser().userid}`);
         const data = await response.json();
-        console.log(data);
+
         if (data.isAdmin) {
             setAdmin(true);
             setLoading(false);

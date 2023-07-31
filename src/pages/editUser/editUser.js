@@ -25,12 +25,11 @@ const EditUser = ({ inputs, title }) => {
     axios
       .put("/backend/api/client/" + clientId, data)
       .then((res, err) => {
-        console.log(res);
-        console.log(err);
+      
+        
         navigate("/app/clients/");
       })
       .catch((err) => {
-        console.log(err);
       });
   };
   const updatePassword = () => {
@@ -38,12 +37,12 @@ const EditUser = ({ inputs, title }) => {
     axios
       .put("/backend/auth//update-password/" + clientId, { password })
       .then((res, err) => {
-        console.log(res);
-        console.log(err);
+      
+        
         navigate("/app/clients/");
       })
       .catch((err) => {
-        console.log(err);
+
       });
   };
 
@@ -52,7 +51,7 @@ const EditUser = ({ inputs, title }) => {
     axios
       .post("/backend/auth/forget-password", { email })
       .then((res) => {
-        console.log(res);
+
         navigate("/app/clients/");
       }
       )
@@ -65,10 +64,10 @@ const EditUser = ({ inputs, title }) => {
       .get("/backend/api/client/" + clientId)
       .then((res) => {
         setData(res.data[0]);
-        console.log(res.data)
+
       })
       .catch((err) => {
-        console.log(err);
+
       });
 
   }, []);
@@ -421,9 +420,8 @@ const EditUser = ({ inputs, title }) => {
             }</div>
             <div class="control">
     <label class="toggle">
-        <span class="toggle__label">Auto Trader:</span>
+        <span class="toggle__label">{t("Auto Trader:")}</span>
         <input class="toggle__control" type="checkbox"  checked={data.auto_trader} onChange={(e) => {
-                        console.log(e.target.checked);
                                                  setData({
                           ...data,
                           auto_trader:  Number(e.target.checked)

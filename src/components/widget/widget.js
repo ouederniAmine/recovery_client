@@ -21,10 +21,8 @@ const Widget = ({ type }) => {
         .get("/backend/api/client/"+authService.getCurrentUser().userid)
         .then((res) => {
           setApiData(res.data[0]);
-          console.log(res.data)
         })
         .catch((err) => {
-          console.log(err);
         });
     }, []);
 

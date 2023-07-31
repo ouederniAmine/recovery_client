@@ -102,7 +102,7 @@ const ImportCsv = ({ inputs, title }) => {
         navigate("/app/clients/");
       })
       .catch((err) => {
-        console.log(err);
+
       });
     };
     
@@ -123,7 +123,7 @@ const ImportCsv = ({ inputs, title }) => {
         skipEmptyLines: true,
       }}
   onUploadAccepted={(results) => {
-    console.log(results.data);
+
     setData(results.data);
     setZoneHover(false);
   }}

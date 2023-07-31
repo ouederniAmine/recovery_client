@@ -23,11 +23,9 @@ const ClientParams = ({ inputs, title }) => {
     axios
       .put("/backend/api/client/" +clientId, data)
       .then((res) => {
-        console.log(res);
         navigate("/app/");
       })
       .catch((err) => {
-        console.log(err);
       });
   };
 
@@ -36,7 +34,6 @@ const ClientParams = ({ inputs, title }) => {
     axios
     .post("/backend/auth/forget-password", {email})
     .then((res) => {
-      console.log(res);
       navigate("/app/");
     }
     )}
@@ -47,10 +44,8 @@ const ClientParams = ({ inputs, title }) => {
       .get("/backend/api/client/"+clientId)
       .then((res) => {
         setData(res.data[0]);
-        console.log(res.data)
       })
       .catch((err) => {
-        console.log(err);
       });
 
   }, []);

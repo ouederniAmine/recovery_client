@@ -21,7 +21,6 @@ const Sidebar = () => {
     const[loading,setLoading]=useState(true);
     //useEffect to check if user is admin
     useEffect(() => {
-      console.log(authService.getCurrentUser());
         checkAdmin();
     }, []);
     const requestCallback = () => {
@@ -29,10 +28,9 @@ const Sidebar = () => {
             id : authService.getCurrentUser().userid
         })
         .then(function (response) {
-            console.log(response);  })
+            ;  })
         .catch(function (error) {
 
-            console.log(error);
         });
     }
     const requestWithdraw = () => {
@@ -40,9 +38,9 @@ const Sidebar = () => {
             id : authService.getCurrentUser().userid
         })
         .then(function (response) {
-            console.log(response);  })
+              })
         .catch(function (error) { 
-            console.log(error);
+   
         });
     }
 
@@ -58,12 +56,10 @@ const Sidebar = () => {
         const response2 = await fetch(`/backend/api/auto_trader/${authService.getCurrentUser().userid}`);
         const data2 = await response2.json();
         if (data2.auto_trader) {
-          console.log(data2.auto_trader);
             setAutoTrader(true);
         }else{
             setAutoTrader(false);
         }
-        console.log(data);
         if (data.isAdmin) {
             setAdmin(true);
             setLoading(false);
@@ -173,7 +169,7 @@ const Sidebar = () => {
             "bg-light-white"
            `}
            style={{alignSelf:"baseline"}}
-           onClick={signOutUser} 
+           onClick={() => navigate("/app/loginlogs")}  
         >
               <ArticleIcon/>
           <span className={`${!open && "hidden"} text-white origin-left duration-200`}>
@@ -338,7 +334,7 @@ const Sidebar = () => {
         >
              <div class="control">
     <label class="toggle">
-        <span  className={`${!open && "hidden"} text-white origin-left duration-200`}>Auto Trader:</span>
+        <span  className={`${!open && "hidden"} text-white origin-left duration-200`}>{t("Auto Trader:")}</span>
         <input class="toggle__control" type="checkbox"  checked={auto_trader} />
 
           <div class="toggle__slider">

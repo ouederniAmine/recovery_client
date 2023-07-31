@@ -24,10 +24,10 @@ const NewUser = ({ inputs, title }) => {
       .post("/backend/api/client", data)
       .then((res) => {
         navigate("/app/clients");
-        console.log(res);
+
       })
       .catch((err) => {
-        console.log(err);
+
       });
   };
 
@@ -38,7 +38,7 @@ const NewUser = ({ inputs, title }) => {
     axios
     .post("/backend/auth/forget-password", {email})
     .then((res) => {
-      console.log(res);
+
       navigate("/app/clients/");
     }
     )}
@@ -186,7 +186,7 @@ const NewUser = ({ inputs, title }) => {
   suffix={data.currency}
   decimalSeparator="," groupSeparator="." 
   decimalsLimit={3}
-  onValueChange={(value, name) => console.log(value, name)}
+
 />
     </div>
   </div> <div className="flex flex-wrap -mx-3 mb-6">
@@ -204,7 +204,7 @@ const NewUser = ({ inputs, title }) => {
   suffix={data.currency}
   decimalSeparator="," groupSeparator="." 
   decimalsLimit={3}
-  onValueChange={(value, name) => console.log(value, name)}
+
 />
     </div>
     <div className="md:w-1/2 px-3 mb-6 md:mb-0">
@@ -222,7 +222,7 @@ const NewUser = ({ inputs, title }) => {
   defaultValue={1000}
   decimalSeparator="," groupSeparator="." 
   decimalsLimit={3}
-  onValueChange={(value, name) => console.log(value, name)}
+
 />
     </div>
   </div>

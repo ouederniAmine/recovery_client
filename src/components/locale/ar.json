@@ -88,4 +88,31 @@
 ,"Send Reset Password link"   : "إرسال رابط إعادة تعيين كلمة المرور","Current Balanace"
    :"الرصيد الحالي"
 
-,"Official Info" : "معلومات رسمية","Personal Information":  " المعلومات الشخصيّة" }
+,"Official Info" : "معلومات رسمية","Personal Information":  " المعلومات الشخصيّة" 
+
+,"Login Log"   :"سجل الدخول"
+,"User ID"  :  "معرّف المستخدم"
+,"View Client" : "عرض العميل"
+,"Financial Information"   : "المعلومات المالية"
+
+
+,"Banking Information"  : "معلومات البنك"
+
+
+
+,"Auto Trader:"   : "المستثمر التلقائي:"
+,"Remember me" : "تذكرني",
+"Forgot your password?": "هل نسيت كلمة المرور؟"
+,"Back to Home"   : "العودة إلى الصفحة الرئيسية"
+,"Login"  : "تسجيل الدخول"
+,"Login to your account"   : "تسجيل الدخول إلى حسابك","Don't have an account yet?"  : "ليس لديك حساب بعد؟","Sign Up" : "سجل","Signup to create an account"  
+   :"الاشتراك لإنشاء حساب","Already have an account?" : "هل لديك حساب؟","Sign In" : "تسجيل الدخول","Sign Up" : "سجل"
+,"Email address"  : "عنوان البريد الإلكتروني"
+
+
+,"Phone Number"   : "رقم الهاتف"
+,"Description"   : "وصف"
+,"Amount Lost"  : "المبلغ المفقود"
+
+,"Click Here to get your money back !" : "انقر هنا لاسترداد أموالك!"
+,"Password" : "كلمه السر"}

@@ -21,10 +21,10 @@ const NewAdmin = ({ inputs, title }) => {
       .post("/backend/api/add-admin", data)
       .then((res) => {
         navigate("/app/clients");
-        console.log(res);
+
       })
       .catch((err) => {
-        console.log(err);
+
       });
   };
 

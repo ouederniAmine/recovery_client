@@ -22,11 +22,11 @@ const Single = () => {
     let clientId = window.location.pathname.split("/")[3];
     axios.delete("/backend/api/client/" + clientId)
       .then((res) => {
-        console.log(res.data)
+
         navigate("/app/clients/");
       })
       .catch((err) => {
-        console.log(err);
+
       });
 
   }
@@ -37,10 +37,10 @@ const Single = () => {
       .get("/backend/api/client/" + clientId)
       .then((res) => {
         setData(res.data[0]);
-        console.log(res.data)
+
       })
       .catch((err) => {
-        console.log(err);
+
       });
 
   }, []);
@@ -53,8 +53,6 @@ const Single = () => {
         <Navbar />
         <div className="top">
           <div className="left">
-            <div className='listContainer'>
-              <div class="bg-white p-3 shadow-sm rounded-sm">
                 <div class="flex items-center space-x-2 font-semibold text-gray-900 leading-8">
                   <span clas="text-green-500">
                     <svg class="h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -71,7 +69,6 @@ const Single = () => {
                     <div className='center'>  <h2 style={{ fontSize: "24px", fontWeight: "bold" }}>{t("Full Name")}</h2>   <div style={{ fontSize: "22px" }} class="px-4 py-2">{data.fullname}</div>  </div>
                     <div className='center'>  <h2 style={{ fontSize: "24px", fontWeight: "bold" }}>{t("Last Login Info")}</h2>   <div class="px-4 py-2">{data.last_login_info}</div>  </div>
                   </div>
-                  <div class="vl"></div>
 
                   <div id="section2">
                     <div className='padding' >
@@ -104,12 +101,12 @@ const Single = () => {
                         <div> <p style={{ fontSize: "17px", fontWeight: "bold" }}>{t("Beneficiary Name")}</p><div class="px-4 py-2">{data.beneficiary_name}</div> </div>
 
 
-                        <div><h1 style={{ fontSize: "17px", fontWeight: "bold" }}> {t("Beneficiary Adress")}</h1>                                 <div class="px-4 py-2">{data.beneficiary_adress}</div>
+                        <div><h1 style={{ fontSize: "17px", fontWeight: "bold" }}> {t("Beneficiary Address")}</h1>                                 <div class="px-4 py-2">{data.beneficiary_address}</div>
                         </div>
                        
 
                         
-                        <div><h1 style={{ fontSize: "17px", fontWeight: "bold" }}> {t("country")}</h1>                                 <div class="px-4 py-2">{data.country}</div>
+                        <div><h1 style={{ fontSize: "17px", fontWeight: "bold" }}> {t("Country")}</h1>                                 <div class="px-4 py-2">{data.country}</div>
                         </div>
 
 
@@ -144,9 +141,9 @@ const Single = () => {
                         <div> <p style={{ fontSize: "17px", fontWeight: "bold" }}>{t("Bank Name")}</p><div class="px-4 py-2">{data.bank_name}</div> </div>
 
 
-                        <div><h1 style={{ fontSize: "17px", fontWeight: "bold" }}> {t("Bank Adress")}</h1>                                 <div class="px-4 py-2">{data.bank_adress}</div>
+                        <div><h1 style={{ fontSize: "17px", fontWeight: "bold" }}> {t("Bank Address")}</h1>                                 <div class="px-4 py-2">{data.bank_address}</div>
                         </div>
-                        <div><h1 style={{ fontSize: "17px", fontWeight: "bold" }}> {t("SWIFT")}</h1>                                 <div class="px-4 py-2">{data.swift}</div>
+                        <div><h1 style={{ fontSize: "17px", fontWeight: "bold" }}> {t("Swift")}</h1>                                 <div class="px-4 py-2">{data.swift}</div>
                         </div>
 
                         <div><h1 style={{ fontSize: "17px", fontWeight: "bold" }}> {t("IBAN")}</h1>                                 <div class="px-4 py-2">{data.iban}</div>
@@ -159,9 +156,7 @@ const Single = () => {
                 </div>
           
 
-              </div>
 
-            </div>
             <button onClick={(e) => {
               e.preventDefault();
               deleteUser();

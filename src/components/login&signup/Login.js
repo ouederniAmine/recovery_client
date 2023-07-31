@@ -4,14 +4,46 @@ import FormAction from "./FormAction";
 import Input from "./Input";
 import { useNavigate } from 'react-router-dom';
 import authService from '../../services/auth.service';
-const fields=loginFields;
+import axios from 'axios';
+import { useTranslation } from 'react-i18next';
+
+
+
+export default function Login()
+{
+    const { t, i18n } = useTranslation();
+
+    const fields=[
+    {
+        labelText:t("Email address"),
+        labelFor:"email-address",
+        id:"email",
+        name:"email",
+        type:"email",
+        autoComplete:"email",
+        isRequired:true,
+        placeholder:t("Email address")  
+    },
+    {
+        labelText:t("Password"),
+        labelFor:"password",
+        id:"password",
+        name:"password",
+        type:"password",
+        autoComplete:"current-password",
+        isRequired:true,
+        placeholder:t("Password")   
+    }
+]
+
+
+
+
 let fieldsState = {};
 fields.forEach(field=>fieldsState[field.id]='');
-
-export default function Login(){
     const [loginState,setLoginState]=useState(fieldsState);
     const navigate = useNavigate();
-   
+
     const handleChange=(e)=>{
         setLoginState({...loginState,[e.target.id]:e.target.value})
     }
@@ -24,10 +56,50 @@ export default function Login(){
 
     //Handle Login API Integration here
     const authenticateUser = () =>{
-        console.log(loginState, loginState.password);
         authService.login(loginState.email, loginState.password)
   .then((e) => {
-    console.log("login success", e);
+    const currentDateAndTime = new Date();
+                const options = {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit',
+                    hour12: false,
+                    timeZoneName: 'short'
+                };
+
+                const formattedDateAndTime = currentDateAndTime.toLocaleString(undefined, options);
+                // post request  to backend/api/login-logs with username , date , userid in body
+                const userId = authService.getCurrentUser();
+                // get username from axios
+                axios.get(`/backend/api/client/${userId.userid}` 
+                    )   .then((res) => {
+                        //check if user is admin
+                        
+                        axios.get(`/backend/api/checkadmin/${userId.userid}`
+                        ).then((response) => {
+                            if(!response.data.isAdmin){
+                                axios.post(`/backend/api/login-logs/`, {
+                                    username: res.data[0].fullname,
+                                    date: formattedDateAndTime,
+                                    userid: userId.userid,
+                                }
+                                ).then((res) => {
+                                
+                                }
+                                ).catch((err) => {
+                                }
+                                );
+                            }})
+                       
+                    }
+                    ).catch((err) => {
+                    }
+                    );
+
+                
     navigate("/app");
 
   })
@@ -58,7 +130,7 @@ export default function Login(){
                 )
             }
         </div>
-        <FormAction handleSubmit={handleSubmit} text="Login" />
+        <FormAction handleSubmit={handleSubmit} text={t("Login")}/>
 
        
 
@@ -70,7 +142,7 @@ export default function Login(){
        }  
    >
 
-       Back to Home
+      {t("Back to Home")} 
    </button></div>
     )   
 }
