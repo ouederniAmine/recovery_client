@@ -1,5 +1,4 @@
 import {  useState } from 'react';
-import { loginFields } from "../../constants/formFields";
 import FormAction from "./FormAction";
 import Input from "./Input";
 import { useNavigate } from 'react-router-dom';
@@ -11,7 +10,7 @@ import { useTranslation } from 'react-i18next';
 
 export default function Login()
 {
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
 
     const fields=[
     {
@@ -75,7 +74,7 @@ fields.forEach(field=>fieldsState[field.id]='');
                 const userId = authService.getCurrentUser();
                 // get username from axios
                 axios.get(`/backend/api/client/${userId.userid}` 
-                    )   .then((res) => {
+                    ).then((res) => {
                         //check if user is admin
                         
                         axios.get(`/backend/api/checkadmin/${userId.userid}`

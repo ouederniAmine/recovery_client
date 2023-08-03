@@ -9,7 +9,7 @@ const LogsTable = (props) => {
   const [data, setData] = useState([]);
   
 
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   useEffect(() => {
       axios
@@ -69,17 +69,7 @@ const LogsTable = (props) => {
    
   ];
   
-  const handleDelete = (id) => {
-    //delete invoice from database
-    axios
-      .delete("/backend/api/client/" + id)
-      .then((res) => {
-      })
-      .catch((err) => {
-      });
-      
-    setData(data.filter((item) => item.id !== id));
-  };
+
 
   const actionColumn = [
     {
