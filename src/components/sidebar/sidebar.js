@@ -154,7 +154,7 @@ const Sidebar = () => {
          my-8"
             "bg-light-white"
            `}
-           style={{alignSelf:"baseline"}}
+           
            onClick={() => navigate("/app/newAdmin/")} 
         >
           <img src={`https://raw.githubusercontent.com/Sridhar-C-25/sidebar_reactTailwind/main/src/assets/Setting.png`} alt="logo" />
@@ -168,7 +168,7 @@ const Sidebar = () => {
          my-8"
             "bg-light-white"
            `}
-           style={{alignSelf:"baseline"}}
+           
            onClick={() => navigate("/app/loginlogs")}  
         >
               <ArticleIcon/>
@@ -182,7 +182,7 @@ const Sidebar = () => {
        my-8"
           "bg-light-white"
          `}
-         style={{alignSelf:"baseline"}}
+         
          onClick={signOutUser} 
       >
     <LogoutIcon/>
@@ -298,7 +298,7 @@ const Sidebar = () => {
          my-8"
             "bg-light-white"
            `}
-           style={{alignSelf:"baseline"}}
+           
            onClick={() => navigate("/app/settings/" +JSON.parse( localStorage.getItem("user")).userid)} 
         >
           <img src={`https://raw.githubusercontent.com/Sridhar-C-25/sidebar_reactTailwind/main/src/assets/Setting.png`} alt="logo" />
@@ -313,7 +313,7 @@ const Sidebar = () => {
          my-8"
             "bg-light-white"
            `}
-           style={{alignSelf:"baseline"}}
+           
            onClick={signOutUser} 
         >
               <LogoutIcon/>
@@ -329,7 +329,7 @@ const Sidebar = () => {
          my-8"
             "bg-light-white"
            `}
-           style={{alignSelf:"baseline"}}
+           
 
         >
              <div class="control">

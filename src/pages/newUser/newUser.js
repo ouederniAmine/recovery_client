@@ -179,10 +179,8 @@ const NewUser = ({ inputs, title }) => {
       <CurrencyInput
   id="input-example"
   name="input-name"
-  value={data.current_balance}
   className="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
   placeholder="1.000,000"
-  defaultValue={1000}
   suffix={data.currency}
   decimalSeparator="," groupSeparator="." 
   decimalsLimit={3}
@@ -197,10 +195,8 @@ const NewUser = ({ inputs, title }) => {
 <CurrencyInput
   id="input-example"
   name="input-name"
-  value={data.funds_on_hold}
   className="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
   placeholder="1.000,000"
-  defaultValue={1000}
   suffix={data.currency}
   decimalSeparator="," groupSeparator="." 
   decimalsLimit={3}
@@ -218,8 +214,6 @@ const NewUser = ({ inputs, title }) => {
 
   className="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
   placeholder="1.000,000"
-  value={data.withdrawable_funds}
-  defaultValue={1000}
   decimalSeparator="," groupSeparator="." 
   decimalsLimit={3}
 
