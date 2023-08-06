@@ -3,22 +3,22 @@
 "sidebar.dashboard": "لوحة التحكم",
 "sidebar.clients": "العملاء",
 "sidebar.addAdmin": "إضافة المشرف",
-"sidebar.signOut": "خروج",
+"sidebar.signOut": "تسجيل الخروج",
 
 "Edit Info" : "تعديل المعلومات",
-"Request a Callback" : "طلب مكالمة",
+"Request a Callback" : "طلب التواصل",
 "Request a withdrawal" : "طلب سحب",
 "Your withdrawal request is now under review. You will contacted for a vocal confirmation shortly.": "تمت مراجعة طلب السحب الخاص بك الآن. سيتم الاتصال بك للتأكيد الصوتي قريبًا."
 ,"Close modal": "إغلاق النافذة"
 
-,"Request Successfully Submitted"   : "تم إرسال الطلب بنجاح",
+,"Request Successfully Submitted"   : "لقد تم إرسال طلبكم بنجاح",
 "I accept"  : "أوافق"
-,"Your request has been successfully submitted. A representative will call you as soon as possible."    : "تم إرسال طلبك بنجاح. سيتصل بك ممثل في أقرب وقت ممكن."
+,"Your request has been successfully submitted. A representative will call you as soon as possible."    : "تم إرسال الطلب بنجاح، سيتم التوصل معكم قريباً من قبل أحد ممثلينا."
 ,"Client Name": "اسم العميل",
 "Client Email": "بريد العميل"
 ,"Current Balance" : "الرصيد الحالي"
-,"Funds On Hold" : "الأموال معلقة"
-,"Funds on Holds"   : "الأموال معلقة"
+,"Funds On Hold" : "الرصيد المعلق"
+,"Funds on Holds"   : "الرصيد المعلق"
 ,"Withdrawable Balance" : "الرصيد القابل للسحب"
 
 ,"Last Login Info"  : "معلومات تسجيل الدخول الأخيرة"
@@ -42,11 +42,11 @@
 "File Information"  : "معلومات الملف",
 "Account Number"    : "رقم الحساب",
 "Full Name" : "الاسم الكامل",
-"Contact Info"  : "معلومات الاتصال",
+"Contact Info"  : " رقم الهاتف",
 "Company Name"      : "اسم الشركة",
 "Permanant Address" : "العنوان الدائم",
 "Latest Clients"    : "أحدث العملاء"
-,"Country"  : "بلد"
+,"Country"  : "الدولة"
 
 ,"Bank Name"    : "اسم البنك",
 "Swift" : "Swift",
@@ -86,7 +86,7 @@
 :"تحديث المعلومات","Change User informations:"  : "تغيير معلومات المستخدم:","Change User Password:" : "تغيير كلمة مرور المستخدم:"
 
 ,"Send Reset Password link"   : "إرسال رابط إعادة تعيين كلمة المرور","Current Balanace"
-   :"الرصيد الحالي"
+   :"الرصيد الإجمالي"
 
 ,"Official Info" : "معلومات رسمية","Personal Information":  " المعلومات الشخصيّة" 
 
@@ -100,7 +100,7 @@
 
 
 
-,"Auto Trader:"   : "المستثمر التلقائي:"
+,"Auto Trader:"   : "المتداول الآلي:"
 ,"Remember me" : "تذكرني",
 "Forgot your password?": "هل نسيت كلمة المرور؟"
 ,"Back to Home"   : "العودة إلى الصفحة الرئيسية"

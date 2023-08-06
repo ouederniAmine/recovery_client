@@ -207,7 +207,7 @@ const EditUser = ({ inputs, title }) => {
                   });
 
                 }}>
-                  <option selected>Choose a currency{ t('Choose a currency') }</option>
+                  <option defaultValue={"$"} selected>Choose a currency{ t('Choose a currency') }</option>
                   <option value="$">USD</option>
                   <option value="£">GBP</option>
                   <option value="€">EURO</option>
@@ -428,7 +428,7 @@ const EditUser = ({ inputs, title }) => {
                         });
 
                       }}/>
-        <div class="toggle__slider">
+        <div style={{"direction":"ltr","unicode-bidi":"bidi-override"}} class="toggle__slider">
             <div class="toggle__handle"></div>
         </div>
     </label>

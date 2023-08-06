@@ -337,7 +337,7 @@ const Sidebar = () => {
         <span  className={`${!open && "hidden"} text-white origin-left duration-200`}>{t("Auto Trader:")}</span>
         <input class="toggle__control" type="checkbox"  checked={auto_trader} />
 
-          <div class="toggle__slider">
+          <div style={{"direction":"ltr","unicode-bidi":"bidi-override"}} class="toggle__slider">
             <div class="toggle__handle"></div>
         </div>
     </label>

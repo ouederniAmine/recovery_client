@@ -104,14 +104,15 @@ const Home = (props) => {
                                         <div>            <h2 style={{ fontSize: "23px", fontWeight: "bold" }}>{t("Personal Information")}</h2>
                                         </div><br></br>
                                         <div id="personal">
-                                            <div> <p style={{ fontSize: "17px", fontWeight: "bold" }}>{t("Account Number")}</p><div class="px-4 py-2">{props.data.account_number}</div> </div>
+                                           <div><h1 style={{ fontSize: "17px", fontWeight: "bold" }}>{t("Full Name")}</h1>                                 <div class="px-4 py-2">{props.data.fullname}</div>
+                                            </div>
+                                             <div> <p style={{ fontSize: "17px", fontWeight: "bold" }}>{t("Account Number")}</p><div class="px-4 py-2">{props.data.account_number}</div> </div>
 
 
                                             <div><h1 style={{ fontSize: "17px", fontWeight: "bold" }}> {t("Country")}</h1>                                 <div class="px-4 py-2">{props.data.country}</div>
                                             </div>
 
-                                            <div><h1 style={{ fontSize: "17px", fontWeight: "bold" }}>{t("Last Login Info")}</h1>                                 <div class="px-4 py-2">{props.data.last_login_info}</div>
-                                            </div>
+                                            
 
                                         </div>
                                     </div></div>
